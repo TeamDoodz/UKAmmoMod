@@ -13,6 +13,7 @@ namespace UKAmmoMod {
 	/// <b>Nails</b>: The Nailgun consumes 1 per normal shot. The Sawblade Launcher consumes 5 per shot. <br/>
 	/// <b>Rockets</b>: The Rocket Launcher consumes 1 per normal shot, and 1 per boulder shot.
 	/// </summary>
+	[ConfigureSingleton(SingletonFlags.NoAutoInstance)]
 	public sealed class AmmoInventory : MonoSingleton<AmmoInventory> {
 		public delegate void AmmoChangedEvent(int before, int after);
 
@@ -42,11 +43,33 @@ namespace UKAmmoMod {
 		public event AmmoChangedEvent? OnNailsChanged;
 		public event AmmoChangedEvent? OnRocketsChanged;
 
+		public bool TryAddCells(int amount) {
+			int before = Cells;
+			Cells += amount;
+			return Cells != before;
+		}
+		public bool TryAddShells(int amount) {
+			int before = Shells;
+			Shells += amount;
+			return Shells != before;
+		}
+		public bool TryAddNails(int amount) {
+			int before = Nails;
+			Nails += amount;
+			return Nails != before;
+		}
+		public bool TryAddRockets(int amount) {
+			int before = Rockets;
+			Rockets += amount;
+			return Rockets != before;
+		}
+
 		public int Cells {
 			get => _cells;
 			set {
 				int before = _cells;
-				_cells = Guard.Against.OutOfRange(value, nameof(value), 0, MaxCells);
+				_cells = Mathf.Clamp(value, 0, MaxCells);
+				if(_cells == before) return;
 				OnCellsChanged?.Invoke(before, _cells);
 			}
 		}
@@ -54,7 +77,8 @@ namespace UKAmmoMod {
 			get => _shells;
 			set {
 				int before = _shells;
-				_shells = Guard.Against.OutOfRange(value, nameof(value), 0, MaxShells);
+				_shells = Mathf.Clamp(value, 0, MaxShells);
+				if(_shells == before) return;
 				OnShellsChanged?.Invoke(before, _shells);
 			}
 		}
@@ -62,7 +86,8 @@ namespace UKAmmoMod {
 			get => _nails;
 			set {
 				int before = _nails;
-				_nails = Guard.Against.OutOfRange(value, nameof(value), 0, MaxNails);
+				_nails = Mathf.Clamp(value, 0, MaxNails);
+				if(_nails == before) return;
 				OnNailsChanged?.Invoke(before, _nails);
 			}
 		}
@@ -70,7 +95,8 @@ namespace UKAmmoMod {
 			get => _rockets;
 			set {
 				int before = _rockets;
-				_rockets = Guard.Against.OutOfRange(value, nameof(value), 0, MaxRockets);
+				_rockets = Mathf.Clamp(value, 0, MaxRockets);
+				if(_rockets == before) return;
 				OnRocketsChanged?.Invoke(before, _rockets);
 			}
 		}
