@@ -53,7 +53,7 @@ Task("RefreshLibs")
 
 Task("Clean")
 .Does(() => {
-	CleanDirectory($"./{PROJECT_NAME}/bin/{configuration}/net6.0");
+	CleanDirectory($"./{PROJECT_NAME}/bin/{configuration}/netstandard2.0");
 });
 
 Task("Build")
@@ -65,9 +65,24 @@ Task("Build")
 });
 
 Task("CopyToGame")
-.IsDependentOn("Build")
 .Does(() => {
-	throw new NotImplementedException();
+	string pluginFolder = System.IO.Path.Combine(gamePath, "BepInEx", "plugins", "UKAmmoMod");
+	CleanDirectory(pluginFolder);
+	System.IO.Directory.CreateDirectory(pluginFolder);
+
+	copy($"./{PROJECT_NAME}/bin/{configuration}/netstandard2.0/UKAmmoMod.dll", System.IO.Path.Combine(pluginFolder, "UKAmmoMod.dll"));
+});
+
+Task("CopyAndRun")
+.IsDependentOn("CopyToGame")
+.Does(() => {
+	// copy-pasted from UMM
+	var psi = new System.Diagnostics.ProcessStartInfo {
+				FileName = @"steam://run/1229490",
+				UseShellExecute = true,
+				WindowStyle = System.Diagnostics.ProcessWindowStyle.Minimized
+	};
+	System.Diagnostics.Process.Start(psi);
 });
 
 //////////////////////////////////////////////////////////////////////
