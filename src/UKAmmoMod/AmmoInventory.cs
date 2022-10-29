@@ -55,7 +55,7 @@ namespace UKAmmoMod {
 			set {
 				int before = _shells;
 				_shells = Guard.Against.OutOfRange(value, nameof(value), 0, MaxShells);
-				OnShellsChanged?.Invoke(before, _cells);
+				OnShellsChanged?.Invoke(before, _shells);
 			}
 		}
 		public int Nails {
@@ -63,7 +63,7 @@ namespace UKAmmoMod {
 			set {
 				int before = _nails;
 				_nails = Guard.Against.OutOfRange(value, nameof(value), 0, MaxNails);
-				OnNailsChanged?.Invoke(before, _cells);
+				OnNailsChanged?.Invoke(before, _nails);
 			}
 		}
 		public int Rockets {
@@ -74,18 +74,5 @@ namespace UKAmmoMod {
 				OnRocketsChanged?.Invoke(before, _rockets);
 			}
 		}
-
-#if DEBUG
-		private void OnGUI() {
-			static void logAmmo(string ammoName, int amount) {
-				GUILayout.Label($"{ammoName}: {amount}");
-			}
-
-			logAmmo("Cells", Cells);
-			logAmmo("Shells", Shells);
-			logAmmo("Nails", Nails);
-			logAmmo("Rockets", Rockets);
-		}
-#endif
 	}
 }
