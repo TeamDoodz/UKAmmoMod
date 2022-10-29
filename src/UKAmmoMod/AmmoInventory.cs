@@ -81,8 +81,6 @@ namespace UKAmmoMod {
 				GUILayout.Label($"{ammoName}: {amount}");
 			}
 
-			GUI.skin = MainPlugin.DebugSkin;
-
 			logAmmo("Cells", Cells);
 			logAmmo("Shells", Shells);
 			logAmmo("Nails", Nails);
