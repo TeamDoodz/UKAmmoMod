@@ -19,7 +19,7 @@ namespace UKAmmoMod.Patches {
 		}
 
 		static bool Prefix(Nailgun __instance) {
-			int amount = __instance.altVersion ? 4 : 1;
+			int amount = __instance.altVersion ? 5 : 1;
 
 			if(AmmoInventory.Instance.Nails < amount) {
 				__instance.burstAmount = 0;
