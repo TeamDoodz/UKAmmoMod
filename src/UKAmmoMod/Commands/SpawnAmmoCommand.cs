@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace UKAmmoMod.Commands {
 	public sealed class SpawnAmmoCommand : BasicCommand {
-		public override string Description => "Spawns one of every ammo type.";
+		public override string Description => "Spawns ten of every ammo type.";
 
 		public override void Execute(GameConsole.Console console, string[] args) {
 			for(int i = 0; i < 10; i++) {
