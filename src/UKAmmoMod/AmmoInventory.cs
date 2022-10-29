@@ -10,7 +10,7 @@ namespace UKAmmoMod {
 	/// <br/>
 	/// <b>Cells</b>:  The Revolver consumes 1 per normal shot, and 6 per charged shot.<br/>
 	/// <b>Shells</b>: The Shotgun consumes 1 per normal shot, and 2 per core eject.<br/>
-	/// <b>Nails</b>: The Nailgun consumes 1 per normal shot. The Sawblade Launcher consumes 4 per shot. <br/>
+	/// <b>Nails</b>: The Nailgun consumes 1 per normal shot. The Sawblade Launcher consumes 5 per shot. <br/>
 	/// <b>Rockets</b>: The Rocket Launcher consumes 1 per normal shot, and 1 per boulder shot.
 	/// </summary>
 	public sealed class AmmoInventory : MonoSingleton<AmmoInventory> {
@@ -27,15 +27,15 @@ namespace UKAmmoMod {
 			).Value;
 		}
 
-		public static int MaxCells { get; } = BindMaxAmmo("Cells", 60);
-		public static int MaxShells { get; } = BindMaxAmmo("Shells", 20);
-		public static int MaxNails { get; } = BindMaxAmmo("Nails", 350);
+		public static int MaxCells { get; } = BindMaxAmmo("Cells", 30);
+		public static int MaxShells { get; } = BindMaxAmmo("Shells", 15);
+		public static int MaxNails { get; } = BindMaxAmmo("Nails", 200);
 		public static int MaxRockets { get; } = BindMaxAmmo("Rockets", 5);
 
-		private int _cells = Mathf.FloorToInt(MaxCells * 0.75f);
-		private int _shells = Mathf.FloorToInt(MaxShells * 0.75f);
-		private int _nails = Mathf.FloorToInt(MaxNails * 0.75f);
-		private int _rockets = Mathf.FloorToInt(MaxRockets * 0.75f);
+		private int _cells = MaxCells;
+		private int _shells = MaxShells;
+		private int _nails = MaxNails;
+		private int _rockets = MaxRockets;
 
 		public event AmmoChangedEvent? OnCellsChanged;
 		public event AmmoChangedEvent? OnShellsChanged;
