@@ -67,7 +67,7 @@ namespace UKAmmoMod {
 			}
 		}
 		public int Rockets {
-			get => _shells;
+			get => _rockets;
 			set {
 				int before = _rockets;
 				_rockets = Guard.Against.OutOfRange(value, nameof(value), 0, MaxRockets);
