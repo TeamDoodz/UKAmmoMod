@@ -2,6 +2,7 @@
 using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
+using UnityEngine;
 
 namespace UKAmmoMod {
 	[BepInPlugin(GUID, Name, Version)]
@@ -17,9 +18,22 @@ namespace UKAmmoMod {
 				return instance;
 			}
 		}
-
 		internal static ManualLogSource logger => Instance.Logger;
 		internal static ConfigFile cfg => Instance.Config;
+
+#if DEBUG
+		private static GUISkin? debugSkin;
+		internal static GUISkin DebugSkin {
+			get {
+				if(debugSkin == null) {
+					debugSkin = ScriptableObject.CreateInstance<GUISkin>();
+					debugSkin.label.font.material.color = Color.white;
+					debugSkin.label.fontSize = 15;
+				}
+				return debugSkin;
+			}
+		}
+#endif
 
 		private void Awake() {
 			instance = this;

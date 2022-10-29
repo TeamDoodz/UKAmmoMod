@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine.SceneManagement;
-using BepInEx.Configuration;
 using UnityEngine;
+using BepInEx.Configuration;
 using Ardalis.GuardClauses;
 
 namespace UKAmmoMod {
@@ -13,7 +13,6 @@ namespace UKAmmoMod {
 	/// <b>Nails</b>: The Nailgun consumes 1 per normal shot. The Sawblade Launcher consumes 4 per shot. <br/>
 	/// <b>Rockets</b>: The Rocket Launcher consumes 1 per normal shot, and 1 per boulder shot.
 	/// </summary>
-	[ConfigureSingleton(SingletonFlags.NoAwakeInstance)]
 	public sealed class AmmoInventory : MonoSingleton<AmmoInventory> {
 		public delegate void AmmoChangedEvent(int before, int after);
 
@@ -78,7 +77,16 @@ namespace UKAmmoMod {
 
 #if DEBUG
 		private void OnGUI() {
-			
+			static void logAmmo(string ammoName, int amount) {
+				GUILayout.Label($"{ammoName}: {amount}");
+			}
+
+			GUI.skin = MainPlugin.DebugSkin;
+
+			logAmmo("Cells", Cells);
+			logAmmo("Shells", Shells);
+			logAmmo("Nails", Nails);
+			logAmmo("Rockets", Rockets);
 		}
 #endif
 	}
