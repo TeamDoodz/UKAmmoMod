@@ -28,9 +28,9 @@ namespace UKAmmoMod {
 			).Value;
 		}
 
-		public static int MaxCells { get; } = BindMaxAmmo("Cells", 30);
-		public static int MaxShells { get; } = BindMaxAmmo("Shells", 15);
-		public static int MaxNails { get; } = BindMaxAmmo("Nails", 200);
+		public static int MaxCells { get; } = BindMaxAmmo("Cells", 20);
+		public static int MaxShells { get; } = BindMaxAmmo("Shells", 10);
+		public static int MaxNails { get; } = BindMaxAmmo("Nails", 75);
 		public static int MaxRockets { get; } = BindMaxAmmo("Rockets", 5);
 
 		private int _cells = MaxCells;
