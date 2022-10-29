@@ -2,6 +2,7 @@
 using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
+using HarmonyLib;
 using UnityEngine;
 
 namespace UKAmmoMod {
@@ -37,6 +38,7 @@ namespace UKAmmoMod {
 
 		private void Awake() {
 			instance = this;
+			new Harmony(GUID).PatchAll();
 			logger.LogMessage($"{Name} v{Version} loaded!");
 		}
 	}
