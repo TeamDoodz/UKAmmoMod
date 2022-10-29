@@ -79,7 +79,7 @@ Task("CopyAndRun")
 .Does(() => {
 	// copy-pasted from UMM
 	var psi = new System.Diagnostics.ProcessStartInfo {
-				FileName = @"steam://run/1229490",
+				FileName = @"steam://run/1229490//sandbox",
 				UseShellExecute = true,
 				WindowStyle = System.Diagnostics.ProcessWindowStyle.Minimized
 	};
