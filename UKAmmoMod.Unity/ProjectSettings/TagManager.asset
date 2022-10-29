@@ -13,27 +13,27 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Environment
+  - Gib
+  - Limb
+  - BigCorpse
+  - EnemyTrigger
+  - AlwaysOnTop
+  - Projectile
+  - Invincible
+  - Invisible
+  - BrokenGlass
+  - PlayerOnly
+  - Virtual Screen
+  - GroundCheck
+  - EnemyWall
+  - Item
+  - Explosion
+  - Outdoors
+  - Outdoors Non-solid
+  - Armor
+  - GibLit
+  - VirtualRender
   - 
   - 
   - 
