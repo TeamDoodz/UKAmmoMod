@@ -30,7 +30,7 @@ namespace UKAmmoMod {
 
 		public static int MaxCells { get; } = BindMaxAmmo("Cells", 20);
 		public static int MaxShells { get; } = BindMaxAmmo("Shells", 10);
-		public static int MaxNails { get; } = BindMaxAmmo("Nails", 150);
+		public static int MaxNails { get; } = BindMaxAmmo("Nails", 125);
 		public static int MaxRockets { get; } = BindMaxAmmo("Rockets", 5);
 
 		private int _cells = MaxCells;
@@ -99,6 +99,16 @@ namespace UKAmmoMod {
 				if(_rockets == before) return;
 				OnRocketsChanged?.Invoke(before, _rockets);
 			}
+		}
+
+		public bool IsFullOf(PickupPrefab prefab) {
+			return prefab switch {
+				PickupPrefab.Cells => Cells >= MaxCells,
+				PickupPrefab.Shells => Shells >= MaxShells,
+				PickupPrefab.Nails => Nails >= MaxNails,
+				PickupPrefab.Rockets => Rockets >= MaxRockets,
+				_ => false,
+			};
 		}
 	}
 }
