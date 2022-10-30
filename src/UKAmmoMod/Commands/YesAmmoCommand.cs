@@ -16,10 +16,7 @@ namespace UKAmmoMod.Commands {
 				return;
 			}
 
-			AmmoInventory.Instance.Cells = AmmoInventory.MaxCells;
-			AmmoInventory.Instance.Shells = AmmoInventory.MaxShells;
-			AmmoInventory.Instance.Nails = AmmoInventory.MaxNails;
-			AmmoInventory.Instance.Rockets = AmmoInventory.MaxRockets;
+			AmmoInventory.Instance.ReplenishAll();
 		}
 	}
 }

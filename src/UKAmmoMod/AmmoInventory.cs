@@ -101,6 +101,13 @@ namespace UKAmmoMod {
 			}
 		}
 
+		public void ReplenishAll() {
+			Cells = MaxCells;
+			Shells = MaxShells;
+			Nails = MaxNails;
+			Rockets = MaxRockets;
+		}
+
 		public bool IsFullOf(PickupPrefab prefab) {
 			return prefab switch {
 				PickupPrefab.Cells => Cells >= MaxCells,
