@@ -44,7 +44,7 @@ namespace UKAmmoMod {
 		private void OnCellsChanged(int before, int after) {
 			if(cellsLabel == null) return;
 			cellsLabel.text = after.ToString();
-			if(after > before) cellsLabel.color += new Color(0.2f, 0.2f, 0.2f);
+			if(after > before) cellsLabel.color += new Color(0.3f, 0.3f, 0.3f);
 		}
 
 		private void OnShellsChanged(int before, int after) {
