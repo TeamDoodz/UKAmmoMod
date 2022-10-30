@@ -108,6 +108,13 @@ namespace UKAmmoMod {
 			Rockets = MaxRockets;
 		}
 
+		public void HalfReplenishAll() {
+			Cells = Mathf.Max(Cells, MaxCells / 2);
+			Shells = Mathf.Max(Shells, MaxShells / 2);
+			Nails = Mathf.Max(Nails, MaxNails / 2);
+			Rockets = Mathf.Max(Cells, MaxRockets / 2);
+		}
+
 		public bool IsFullOf(PickupPrefab prefab) {
 			return prefab switch {
 				PickupPrefab.Cells => Cells >= MaxCells,
