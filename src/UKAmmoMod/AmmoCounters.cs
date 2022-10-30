@@ -6,7 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace UKAmmoMod {
-	public sealed class AmmoCounters : MonoBehaviour {
+	[ConfigureSingleton(SingletonFlags.NoAutoInstance)]
+	public sealed class AmmoCounters : MonoSingleton<AmmoCounters> {
 		[SerializeField] private Text? cellsLabel;
 		[SerializeField] private Text? shellsLabel;
 		[SerializeField] private Text? nailsLabel;
