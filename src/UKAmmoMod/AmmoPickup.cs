@@ -66,14 +66,15 @@ namespace UKAmmoMod {
 			}
 			if(dist <= col.radius) {
 				int styleMultiplier = (int)StyleLevelScaling.Evaluate(StyleHUD.Instance.rankIndex / 7);
-				if(
+				if(!(
 					AmmoInventory.Instance.TryAddCells(GiveCells * styleMultiplier) ||
 					AmmoInventory.Instance.TryAddShells(GiveShells * styleMultiplier) ||
 					AmmoInventory.Instance.TryAddNails(GiveNails * styleMultiplier) ||
 					AmmoInventory.Instance.TryAddRockets(GiveRockets * styleMultiplier)
-				) {
-					Destroy(gameObject);
+				)) {
+					StyleHUD.Instance.AddPoints(5, "<color=purple>OVERFILL</color>");
 				}
+				Destroy(gameObject);
 			}
 		}
 
