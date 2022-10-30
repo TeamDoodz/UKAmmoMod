@@ -49,8 +49,6 @@ namespace UKAmmoMod.Patches {
 
 			if(__instance.gameObject.GetComponent<CancerousRodent>() != null) __instance.enemyType = EnemyType.CancerousRodent;
 
-			MainPlugin.logger.LogDebug($"{__instance.enemyType} died");
-
 			PickupPrefab[] prefabs = GetPrefabs(__instance);
 
 			Collider col = __instance.GetComponent<Collider>() ?? __instance.GetComponentInChildren<Collider>();
