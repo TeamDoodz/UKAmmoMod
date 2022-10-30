@@ -50,19 +50,19 @@ namespace UKAmmoMod {
 		private void OnShellsChanged(int before, int after) {
 			if(shellsLabel == null) return;
 			shellsLabel.text = after.ToString();
-			if(after > before) shellsLabel.color += new Color(0.1f, 0.1f, 0.1f);
+			if(after > before) shellsLabel.color += new Color(0.3f, 0.3f, 0.3f);
 		}
 
 		private void OnNailsChanged(int before, int after) {
 			if(nailsLabel == null) return;
 			nailsLabel.text = after.ToString();
-			if(after > before) nailsLabel.color += new Color(0.1f, 0.1f, 0.1f);
+			if(after > before) nailsLabel.color += new Color(0.3f, 0.3f, 0.3f);
 		}
 
 		private void OnRocketsChanged(int before, int after) {
 			if(rocketsLabel == null) return;
 			rocketsLabel.text = after.ToString();
-			if(after > before) rocketsLabel.color += new Color(0.1f, 0.1f, 0.1f);
+			if(after > before) rocketsLabel.color += new Color(0.3f, 0.3f, 0.3f);
 		}
 	}
 }
