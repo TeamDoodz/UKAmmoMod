@@ -9,12 +9,14 @@ namespace UKAmmoMod.Patches {
 		const int FIRE_NORMAL = 1;
 		const int FIRE_SUPER = 2;
 
-		static bool Prefix(int shotType) {
+		static bool Prefix(Revolver __instance, int shotType) {
+			int normalAmnt = __instance.altVersion ? 2 : 1;
+
 			if(shotType == FIRE_SUPER) {
 				if(AmmoInventory.Instance.Cells < 6) return false;
 				AmmoInventory.Instance.Cells -= 6;
 			} else {
-				if(AmmoInventory.Instance.Cells < 1) return false;
+				if(AmmoInventory.Instance.Cells < normalAmnt) return false;
 				AmmoInventory.Instance.Cells--;
 			}
 			return true;

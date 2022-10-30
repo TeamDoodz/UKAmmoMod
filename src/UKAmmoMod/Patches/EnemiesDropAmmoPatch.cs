@@ -61,7 +61,7 @@ namespace UKAmmoMod.Patches {
 
 		private static PickupPrefab[] GetPrefabs(EnemyIdentifier __instance) {
 			PickupPrefab[] prefabs;
-			int amount = enemyDropAmnts.ContainsKey(__instance.enemyType) ? enemyDropAmnts[__instance.enemyType] : 5;
+			int amount = enemyDropAmnts.ContainsKey(__instance.enemyType) ? enemyDropAmnts[__instance.enemyType] : 2;
 			prefabs = new PickupPrefab[amount];
 
 			Array possible = Enum.GetValues(typeof(PickupPrefab));
