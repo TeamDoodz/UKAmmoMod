@@ -5,4 +5,6 @@ You cannot fire a gun unless you have ammo for it.
 You can regain ammo by:
 - **Killing enemies.** You get more ammo depending on the enemy type and your current style rank.
 - **Parrying.** Parries will restore your ammo to full.
-Additionally, in the Cyber Grind after completing a wave your ammo will be replenished to at least half of the maximum value.
+Additionally, in the Cyber Grind after completing a wave your ammo will be replenished to at least half of the maximum value.<br/>
+<br/>
+*Ammo icons created by Frizou*
