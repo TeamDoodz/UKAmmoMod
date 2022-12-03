@@ -28,12 +28,12 @@ namespace UKAmmoMod {
 		public int GiveNails;
 		public int GiveRockets;
 
-		public const float DistanceToPickUp = 10f;
+		public const float DistanceToPickUp = 25f;
 
 		public AnimationCurve StyleLevelScaling = new();
 
 		private float pickupTimer = 0.1f;
-		private float despawnTimer = 10f;
+		private float despawnTimer = 30f;
 
 		private Rigidbody rb;
 		private SphereCollider col;
