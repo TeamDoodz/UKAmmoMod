@@ -6,12 +6,7 @@ using Ardalis.GuardClauses;
 
 namespace UKAmmoMod {
 	/// <summary>
-	/// Represents the player's inventory. This resets at the start of each level. <br/>
-	/// <br/>
-	/// <b>Cells</b>:  The Revolver consumes 1 per normal shot, and 6 per charged shot.<br/>
-	/// <b>Shells</b>: The Shotgun consumes 1 per normal shot, and 2 per core eject.<br/>
-	/// <b>Nails</b>: The Nailgun consumes 1 per normal shot. The Sawblade Launcher consumes 5 per shot. <br/>
-	/// <b>Rockets</b>: The Rocket Launcher consumes 1 per normal shot, and 1 per boulder shot.
+	/// Represents the player's inventory. This resets at the start of each level.
 	/// </summary>
 	[ConfigureSingleton(SingletonFlags.NoAutoInstance)]
 	public sealed class AmmoInventory : MonoSingleton<AmmoInventory> {
