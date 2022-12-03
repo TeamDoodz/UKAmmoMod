@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using HarmonyLib;
 
-namespace UKAmmoMod.Patches {
+namespace UKAmmoMod.Patches.NailgunAmmo {
 	[HarmonyPatch(typeof(Nailgun), nameof(Nailgun.Update))]
 	static class NailgunNoAmmoPoolWhenOutOfAmmoPatch {
 		static void Postfix(Nailgun __instance) {
 			int amount = __instance.altVersion ? 10 : 1;
 
-			if(AmmoInventory.Instance.Nails >= amount) {
+			if (AmmoInventory.Instance.Nails >= amount) {
 				return;
 			}
 

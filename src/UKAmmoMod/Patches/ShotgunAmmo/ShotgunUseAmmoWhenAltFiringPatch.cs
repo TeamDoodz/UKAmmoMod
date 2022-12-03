@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using HarmonyLib;
 
-namespace UKAmmoMod.Patches {
+namespace UKAmmoMod.Patches.ShotgunAmmo {
 	[HarmonyPatch(typeof(Shotgun), nameof(Shotgun.ShootSinks))]
 	static class ShotgunUseAmmoWhenAltFiringPatch {
 		static bool Prefix() {

@@ -47,7 +47,4 @@
 	    <HintPath>lib\UnityEngine.UIModule.dll</HintPath>
 	  </Reference>
 	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Patches\Revolver\" />
-	</ItemGroup>
 </Project>
