@@ -47,8 +47,12 @@ Task("RefreshLibs")
 
 	// Copy BepInEx files
 	string bepinexCore = System.IO.Path.Combine(gamePath, "BepInEx", "core");
+
 	copy(System.IO.Path.Combine(bepinexCore, "BepInEx.dll"), System.IO.Path.Combine(libFolder, "BepInEx.dll"));
 	copy(System.IO.Path.Combine(bepinexCore, "0Harmony.dll"), System.IO.Path.Combine(libFolder, "0Harmony.dll"));
+
+	copy(System.IO.Path.Combine(bepinexCore, "BepInEx.xml"), System.IO.Path.Combine(libFolder, "BepInEx.xml"));
+	copy(System.IO.Path.Combine(bepinexCore, "0Harmony.xml"), System.IO.Path.Combine(libFolder, "0Harmony.xml"));
 });
 
 Task("Clean")
@@ -70,7 +74,6 @@ Task("CopyToGame")
 	CleanDirectory(pluginFolder);
 	System.IO.Directory.CreateDirectory(pluginFolder);
 
-	copy($"./{PROJECT_NAME}/bin/{configuration}/netstandard2.0/Ardalis.GuardClauses.dll", System.IO.Path.Combine(pluginFolder, "Ardalis.GuardClauses.dll"));
 	copy($"./{PROJECT_NAME}/bin/{configuration}/netstandard2.0/UKAmmoMod.dll", System.IO.Path.Combine(pluginFolder, "UKAmmoMod.dll"));
 	copy($"../{PROJECT_NAME}.Unity/Built Bundles/{PROJECT_NAME.ToLower()}_assets", System.IO.Path.Combine(pluginFolder, $"{PROJECT_NAME.ToLower()}_assets"));
 });

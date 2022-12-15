@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: cafb2ad2bb78dc6488c3fea819d3cbe0
+guid: 091b38071068eb54da8206aea40b68cc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3306398756482371943
-    second: ammo_icons_0
-  - first:
-      213: -4613800633072809767
-    second: ammo_icons_1
-  - first:
-      213: -7175432183695586754
-    second: ammo_icons_2
-  - first:
-      213: -7539449437738695248
-    second: ammo_icons_3
+      213: -2252379806506117126
+    second: ui_background_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -99,85 +90,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ammo_icons_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 34
-        width: 32
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 761dce5a620b2ed20800000000000000
-      internalID: 3306398756482371943
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ammo_icons_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d80939e4cc78ffb0800000000000000
-      internalID: -4613800633072809767
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ammo_icons_2
+      name: ui_background_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 30
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3a4bec227ebb6c90800000000000000
-      internalID: -7175432183695586754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ammo_icons_3
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 0
-        width: 34
+        width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 8, y: 8, z: 8, w: 8}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b5019d9eae7e5790800000000000000
-      internalID: -7539449437738695248
+      spriteID: af790f5ef70fdb0e0800000000000000
+      internalID: -2252379806506117126
       vertices: []
       indices: 
       edges: []
@@ -185,7 +113,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f6710783297a6754cafa8e67de28c821
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -196,5 +124,5 @@ TextureImporter:
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
   userData: 
-  assetBundleName: ukammomod_assets
+  assetBundleName: 
   assetBundleVariant: 
