@@ -70,7 +70,6 @@ Task("CopyToGame")
 	CleanDirectory(pluginFolder);
 	System.IO.Directory.CreateDirectory(pluginFolder);
 
-	copy($"./{PROJECT_NAME}/bin/{configuration}/netstandard2.0/Ardalis.GuardClauses.dll", System.IO.Path.Combine(pluginFolder, "Ardalis.GuardClauses.dll"));
 	copy($"./{PROJECT_NAME}/bin/{configuration}/netstandard2.0/UKAmmoMod.dll", System.IO.Path.Combine(pluginFolder, "UKAmmoMod.dll"));
 	copy($"../{PROJECT_NAME}.Unity/Built Bundles/{PROJECT_NAME.ToLower()}_assets", System.IO.Path.Combine(pluginFolder, $"{PROJECT_NAME.ToLower()}_assets"));
 });
