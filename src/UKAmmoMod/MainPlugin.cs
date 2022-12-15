@@ -8,7 +8,7 @@ using UnityEngine;
 namespace UKAmmoMod; 
 
 [BepInPlugin(GUID, Name, Version)]
-public class MainPlugin : BaseUnityPlugin {
+public sealed class MainPlugin : BaseUnityPlugin {
 	public const string GUID = "io.github.TeamDoodz.UKAmmoMod";
 	public const string Name = "Ammo Mod";
 	public const string Version = "1.0.0";

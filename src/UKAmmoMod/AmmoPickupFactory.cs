@@ -6,7 +6,7 @@ using UnityEngine;
 namespace UKAmmoMod; 
 
 [ConfigureSingleton(SingletonFlags.PersistAutoInstance)]
-public class AmmoPickupFactory : MonoSingleton<AmmoPickupFactory> {
+public sealed class AmmoPickupFactory : MonoSingleton<AmmoPickupFactory> {
 	private Dictionary<PickupPrefab, GameObject> prefabs = new Dictionary<PickupPrefab, GameObject>();
 
 	public override void Awake() {
