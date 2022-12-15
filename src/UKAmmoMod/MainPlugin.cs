@@ -3,6 +3,7 @@ using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
+using TeamDoodz.ModdingHelpers.Harmony;
 using UnityEngine;
 
 namespace UKAmmoMod; 
@@ -25,7 +26,7 @@ public sealed class MainPlugin : BaseUnityPlugin {
 
 	private void Awake() {
 		instance = this;
-		new Harmony(GUID).PatchAll();
+		new Harmony(GUID).PatchAllWithPrerequisite();
 		logger.LogMessage($"{Name} v{Version} loaded!");
 	}
 }

@@ -9,10 +9,16 @@ namespace UKAmmoMod;
 
 [ConfigureSingleton(SingletonFlags.NoAutoInstance)]
 public sealed class AmmoCounters : MonoSingleton<AmmoCounters> {
+	[Header("Labels")]
 	[SerializeField] private Text? cellsLabel;
 	[SerializeField] private Text? shellsLabel;
 	[SerializeField] private Text? nailsLabel;
 	[SerializeField] private Text? rocketsLabel;
+	[Header("Objs")]
+	[SerializeField] private GameObject? cellsObj;
+	[SerializeField] private GameObject? shellsObj;
+	[SerializeField] private GameObject? nailsObj;
+	[SerializeField] private GameObject? rocketsObj;
 
 	private Color cellsOriginalCol;
 	private Color shellsOriginalCol;
@@ -20,6 +26,11 @@ public sealed class AmmoCounters : MonoSingleton<AmmoCounters> {
 	private Color rocketsOriginalCol;
 
 	private void Start() {
+		cellsObj?.SetActive(AmmoInventory.UseCells);
+		shellsObj?.SetActive(AmmoInventory.UseShells);
+		nailsObj?.SetActive(AmmoInventory.UseNails);
+		rocketsObj?.SetActive(AmmoInventory.UseRockets);
+
 		cellsOriginalCol = cellsLabel?.color ?? Color.white;
 		shellsOriginalCol = shellsLabel?.color ?? Color.white;
 		nailsOriginalCol = nailsLabel?.color ?? Color.white;
