@@ -9,7 +9,6 @@ namespace UKAmmoMod;
 public class AmmoPickupFactory : MonoSingleton<AmmoPickupFactory> {
 	private Dictionary<PickupPrefab, GameObject> prefabs = new Dictionary<PickupPrefab, GameObject>();
 
-	// MonoSingleton.Awake is public instead of protected for some reason. Kinda cringe tbh
 	public override void Awake() {
 		base.Awake();
 		prefabs.Add(PickupPrefab.Cells,   ModAssets.MainBundle.LoadAsset<GameObject>("assets/prefabs/cellspickup.prefab"));
