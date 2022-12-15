@@ -6,7 +6,7 @@ using HarmonyLib;
 namespace UKAmmoMod.Patches.ShotgunAmmo; 
 
 [HarmonyPatch(typeof(Shotgun), nameof(Shotgun.Shoot))]
-static class ShotgunUseAmmoWhenFiringPatch {
+file static class ShotgunUseAmmoWhenFiringPatch {
 	static bool Prefix() {
 		if(AmmoInventory.Instance.Shells < 1) return false;
 		AmmoInventory.Instance.Shells--;

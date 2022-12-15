@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 namespace UKAmmoMod.Patches; 
 
 [HarmonyPatch(typeof(EnemyIdentifier), nameof(EnemyIdentifier.Death))]
-static class EnemiesDropAmmoPatch {
+file static class EnemiesDropAmmoPatch {
 	static Dictionary<EnemyType, int> enemyDropAmnts = new Dictionary<EnemyType, int>() {
 		{EnemyType.Filth, 1},
 		{EnemyType.Stray, 1},

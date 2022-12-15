@@ -7,7 +7,7 @@ using HarmonyLib;
 namespace UKAmmoMod.Patches.NailgunAmmo;
 
 [HarmonyPatch]
-static class NailgunUseAmmoWhenFiringPatch {
+file static class NailgunUseAmmoWhenFiringPatch {
 	static IEnumerable<MethodInfo> TargetMethods() {
 		// jesse
 		static MethodInfo getMeth(string name) {

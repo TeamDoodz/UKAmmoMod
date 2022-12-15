@@ -6,7 +6,7 @@ using HarmonyLib;
 namespace UKAmmoMod.Patches; 
 
 [HarmonyPatch(typeof(NewMovement), nameof(NewMovement.Respawn))]
-static class ResetAmmoOnRespawnPatch {
+file static class ResetAmmoOnRespawnPatch {
 	static void Prefix() {
 		AmmoInventory.Instance.ReplenishAll();
 	}

@@ -6,7 +6,7 @@ using HarmonyLib;
 namespace UKAmmoMod.Patches.RocketLauncherAmmo; 
 
 [HarmonyPatch(typeof(RocketLauncher), nameof(RocketLauncher.Shoot))]
-static class RocketLauncherUseAmmoWhenFiringPatch {
+file static class RocketLauncherUseAmmoWhenFiringPatch {
 	static bool Prefix() {
 		if(AmmoInventory.Instance.Rockets < 1) return false;
 		AmmoInventory.Instance.Rockets--;

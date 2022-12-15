@@ -6,7 +6,7 @@ using HarmonyLib;
 namespace UKAmmoMod.Patches.NailgunAmmo; 
 
 [HarmonyPatch(typeof(Nailgun), nameof(Nailgun.Update))]
-static class NailgunNoAmmoPoolWhenOutOfAmmoPatch {
+file static class NailgunNoAmmoPoolWhenOutOfAmmoPatch {
 	static void Postfix(Nailgun __instance) {
 		int amount = __instance.altVersion ? 10 : 1;
 

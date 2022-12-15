@@ -7,7 +7,7 @@ using UnityEngine;
 namespace UKAmmoMod.Patches; 
 
 [HarmonyPatch(typeof(PlayerActivator), nameof(PlayerActivator.OnTriggerEnter))]
-static class ShowAmmoUIPatch {
+file static class ShowAmmoUIPatch {
 	static GameObject? ammoCountersPrefab;
 	static void Prefix(PlayerActivator __instance) {
 		if(__instance.activated) return;

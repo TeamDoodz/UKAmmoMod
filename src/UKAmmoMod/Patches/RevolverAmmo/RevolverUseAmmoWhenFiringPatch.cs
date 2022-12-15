@@ -6,7 +6,7 @@ using HarmonyLib;
 namespace UKAmmoMod.Patches.RevolverAmmo;
 
 [HarmonyPatch(typeof(Revolver), nameof(Revolver.Shoot))]
-static class RevolverUseAmmoWhenFiringPatch {
+file static class RevolverUseAmmoWhenFiringPatch {
 	const int FIRE_NORMAL = 1;
 	const int FIRE_SUPER = 2;
 
