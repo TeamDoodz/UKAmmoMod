@@ -8,6 +8,8 @@ namespace UKAmmoMod.Patches.NailgunAmmo;
 
 [HarmonyPatch]
 file static class NailgunUseAmmoWhenFiringPatch {
+	static bool Prerequisite => AmmoInventory.UseNails;
+
 	static IEnumerable<MethodInfo> TargetMethods() {
 		// jesse
 		static MethodInfo getMeth(string name) {

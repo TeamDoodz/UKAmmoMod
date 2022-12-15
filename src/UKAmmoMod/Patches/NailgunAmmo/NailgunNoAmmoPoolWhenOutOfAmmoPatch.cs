@@ -7,6 +7,8 @@ namespace UKAmmoMod.Patches.NailgunAmmo;
 
 [HarmonyPatch(typeof(Nailgun), nameof(Nailgun.Update))]
 file static class NailgunNoAmmoPoolWhenOutOfAmmoPatch {
+	static bool Prerequisite => AmmoInventory.UseNails;
+
 	static void Postfix(Nailgun __instance) {
 		int amount = __instance.altVersion ? 10 : 1;
 

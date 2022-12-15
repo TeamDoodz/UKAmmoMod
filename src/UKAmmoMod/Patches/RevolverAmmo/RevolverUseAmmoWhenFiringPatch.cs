@@ -7,6 +7,8 @@ namespace UKAmmoMod.Patches.RevolverAmmo;
 
 [HarmonyPatch(typeof(Revolver), nameof(Revolver.Shoot))]
 file static class RevolverUseAmmoWhenFiringPatch {
+	static bool Prerequisite => AmmoInventory.UseCells;
+
 	const int FIRE_NORMAL = 1;
 	const int FIRE_SUPER = 2;
 

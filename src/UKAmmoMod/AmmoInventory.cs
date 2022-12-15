@@ -22,11 +22,26 @@ public sealed class AmmoInventory : MonoSingleton<AmmoInventory> {
 			new ConfigDescription($"Maximum for {ammoType}.")
 		).Value;
 	}
+	private static bool BindAmmoActive(string ammoType) {
+		return MainPlugin.cfg.Bind(
+			new ConfigDefinition(
+				"UseAmmo",
+				$"{ammoType}Active"
+			),
+			true,
+			new ConfigDescription($"Enable {ammoType} ammo.")
+		).Value;
+	}
 
 	public static int MaxCells { get; } = BindMaxAmmo("Cells", 20);
 	public static int MaxShells { get; } = BindMaxAmmo("Shells", 10);
 	public static int MaxNails { get; } = BindMaxAmmo("Nails", 125);
 	public static int MaxRockets { get; } = BindMaxAmmo("Rockets", 5);
+
+	public static bool UseCells { get; } = BindAmmoActive("Cells");
+	public static bool UseShells { get; } = BindAmmoActive("Shells");
+	public static bool UseNails { get; } = BindAmmoActive("Nails");
+	public static bool UseRockets { get; } = BindAmmoActive("Rockets");
 
 	private int _cells = MaxCells;
 	private int _shells = MaxShells;
@@ -39,21 +54,25 @@ public sealed class AmmoInventory : MonoSingleton<AmmoInventory> {
 	public event AmmoChangedEvent? OnRocketsChanged;
 
 	public bool TryAddCells(int amount) {
+		if(!UseCells) return false;
 		int before = Cells;
 		Cells += amount;
 		return Cells != before;
 	}
 	public bool TryAddShells(int amount) {
+		if(!UseShells) return false;
 		int before = Shells;
 		Shells += amount;
 		return Shells != before;
 	}
 	public bool TryAddNails(int amount) {
+		if(!UseNails) return false;
 		int before = Nails;
 		Nails += amount;
 		return Nails != before;
 	}
 	public bool TryAddRockets(int amount) {
+		if(!UseRockets) return false;
 		int before = Rockets;
 		Rockets += amount;
 		return Rockets != before;
@@ -62,6 +81,7 @@ public sealed class AmmoInventory : MonoSingleton<AmmoInventory> {
 	public int Cells {
 		get => _cells;
 		set {
+			if(!UseCells) return;
 			int before = _cells;
 			_cells = Mathf.Clamp(value, 0, MaxCells);
 			if(_cells == before) return;
@@ -71,6 +91,7 @@ public sealed class AmmoInventory : MonoSingleton<AmmoInventory> {
 	public int Shells {
 		get => _shells;
 		set {
+			if(!UseShells) return;
 			int before = _shells;
 			_shells = Mathf.Clamp(value, 0, MaxShells);
 			if(_shells == before) return;
@@ -80,6 +101,7 @@ public sealed class AmmoInventory : MonoSingleton<AmmoInventory> {
 	public int Nails {
 		get => _nails;
 		set {
+			if(!UseNails) return;
 			int before = _nails;
 			_nails = Mathf.Clamp(value, 0, MaxNails);
 			if(_nails == before) return;
@@ -89,6 +111,7 @@ public sealed class AmmoInventory : MonoSingleton<AmmoInventory> {
 	public int Rockets {
 		get => _rockets;
 		set {
+			if(!UseRockets) return;
 			int before = _rockets;
 			_rockets = Mathf.Clamp(value, 0, MaxRockets);
 			if(_rockets == before) return;
