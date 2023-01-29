@@ -12,7 +12,7 @@ namespace UKAmmoMod;
 public sealed class MainPlugin : BaseUnityPlugin {
 	public const string GUID = "io.github.TeamDoodz.UKAmmoMod";
 	public const string Name = "Ammo Mod";
-	public const string Version = "1.1.1";
+	public const string Version = "1.1.2";
 
 	private static MainPlugin? instance;
 	internal static MainPlugin Instance {
